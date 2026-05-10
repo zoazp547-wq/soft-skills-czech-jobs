@@ -1,0 +1,20 @@
+# =============================================================================
+# Global Project Settings
+# =============================================================================
+
+logging:
+  # CONFIGURABLE: Log level for the application (DEBUG, INFO, WARNING, ERROR)
+  level: "INFO"
+
+  # CONFIGURABLE: Log output format
+  format: "%(asctime)s [%(name)s] %(levelname)s: %(message)s"
+
+  # CONFIGURABLE: Directory where log files are stored (relative to project root)
+  log_dir: "logs"
+
+  # CONFIGURABLE: Log file name pattern ({module} is replaced with the module name)
+  file_pattern: "{module}_{timestamp}.log"
+
+output:
+  # CONFIGURABLE: Base directory for all module outputs (relative to project root)
+  output_dir: "output"

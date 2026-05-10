@@ -1,0 +1,312 @@
+{
+  "summary": {
+    "total_documents": 1046,
+    "vocabulary_size": 14110,
+    "top_n": 50,
+    "soft_count": 5,
+    "hard_count": 6,
+    "noise_count": 39
+  },
+  "top_terms": [
+    {
+      "term": "znalost",
+      "mean_tfidf": 0.027365,
+      "doc_frequency": 700,
+      "category": "noise"
+    },
+    {
+      "term": "tým",
+      "mean_tfidf": 0.026824,
+      "doc_frequency": 666,
+      "category": "noise"
+    },
+    {
+      "term": "můj",
+      "mean_tfidf": 0.022039,
+      "doc_frequency": 549,
+      "category": "noise"
+    },
+    {
+      "term": "komunikace",
+      "mean_tfidf": 0.020824,
+      "doc_frequency": 589,
+      "category": "soft"
+    },
+    {
+      "term": "zákazník",
+      "mean_tfidf": 0.019623,
+      "doc_frequency": 283,
+      "category": "soft"
+    },
+    {
+      "term": "spolupráce",
+      "mean_tfidf": 0.019303,
+      "doc_frequency": 525,
+      "category": "soft"
+    },
+    {
+      "term": "zkušenost",
+      "mean_tfidf": 0.019274,
+      "doc_frequency": 587,
+      "category": "hard"
+    },
+    {
+      "term": "podpora",
+      "mean_tfidf": 0.019012,
+      "doc_frequency": 470,
+      "category": "noise"
+    },
+    {
+      "term": "účetní",
+      "mean_tfidf": 0.018559,
+      "doc_frequency": 161,
+      "category": "hard"
+    },
+    {
+      "term": "možnost",
+      "mean_tfidf": 0.018218,
+      "doc_frequency": 548,
+      "category": "noise"
+    },
+    {
+      "term": "výhoda",
+      "mean_tfidf": 0.018062,
+      "doc_frequency": 561,
+      "category": "noise"
+    },
+    {
+      "term": "schopnost",
+      "mean_tfidf": 0.017653,
+      "doc_frequency": 494,
+      "category": "soft"
+    },
+    {
+      "term": "obchodní",
+      "mean_tfidf": 0.01762,
+      "doc_frequency": 243,
+      "category": "hard"
+    },
+    {
+      "term": "systém",
+      "mean_tfidf": 0.017508,
+      "doc_frequency": 456,
+      "category": "noise"
+    },
+    {
+      "term": "klient",
+      "mean_tfidf": 0.017068,
+      "doc_frequency": 239,
+      "category": "soft"
+    },
+    {
+      "term": "doba",
+      "mean_tfidf": 0.016518,
+      "doc_frequency": 459,
+      "category": "noise"
+    },
+    {
+      "term": "projekt",
+      "mean_tfidf": 0.016346,
+      "doc_frequency": 246,
+      "category": "noise"
+    },
+    {
+      "term": "oblast",
+      "mean_tfidf": 0.016336,
+      "doc_frequency": 391,
+      "category": "noise"
+    },
+    {
+      "term": "office",
+      "mean_tfidf": 0.016123,
+      "doc_frequency": 505,
+      "category": "hard"
+    },
+    {
+      "term": "vedení",
+      "mean_tfidf": 0.016079,
+      "doc_frequency": 313,
+      "category": "noise"
+    },
+    {
+      "term": "kolega",
+      "mean_tfidf": 0.015766,
+      "doc_frequency": 429,
+      "category": "noise"
+    },
+    {
+      "term": "prostředí",
+      "mean_tfidf": 0.015627,
+      "doc_frequency": 474,
+      "category": "noise"
+    },
+    {
+      "term": "příspěvek",
+      "mean_tfidf": 0.015624,
+      "doc_frequency": 392,
+      "category": "noise"
+    },
+    {
+      "term": "správa",
+      "mean_tfidf": 0.015524,
+      "doc_frequency": 309,
+      "category": "noise"
+    },
+    {
+      "term": "kč",
+      "mean_tfidf": 0.015519,
+      "doc_frequency": 290,
+      "category": "noise"
+    },
+    {
+      "term": "člověk",
+      "mean_tfidf": 0.015397,
+      "doc_frequency": 345,
+      "category": "noise"
+    },
+    {
+      "term": "finanční",
+      "mean_tfidf": 0.015209,
+      "doc_frequency": 327,
+      "category": "hard"
+    },
+    {
+      "term": "administrativní",
+      "mean_tfidf": 0.014581,
+      "doc_frequency": 299,
+      "category": "noise"
+    },
+    {
+      "term": "dle",
+      "mean_tfidf": 0.014537,
+      "doc_frequency": 378,
+      "category": "noise"
+    },
+    {
+      "term": "příprava",
+      "mean_tfidf": 0.014497,
+      "doc_frequency": 362,
+      "category": "noise"
+    },
+    {
+      "term": "moci",
+      "mean_tfidf": 0.014339,
+      "doc_frequency": 408,
+      "category": "noise"
+    },
+    {
+      "term": "kontrola",
+      "mean_tfidf": 0.014235,
+      "doc_frequency": 308,
+      "category": "noise"
+    },
+    {
+      "term": "pracovat",
+      "mean_tfidf": 0.014118,
+      "doc_frequency": 374,
+      "category": "noise"
+    },
+    {
+      "term": "rád",
+      "mean_tfidf": 0.014088,
+      "doc_frequency": 336,
+      "category": "noise"
+    },
+    {
+      "term": "technický",
+      "mean_tfidf": 0.014037,
+      "doc_frequency": 206,
+      "category": "noise"
+    },
+    {
+      "term": "vzdělat",
+      "mean_tfidf": 0.013997,
+      "doc_frequency": 473,
+      "category": "noise"
+    },
+    {
+      "term": "ms",
+      "mean_tfidf": 0.013908,
+      "doc_frequency": 478,
+      "category": "noise"
+    },
+    {
+      "term": "řízení",
+      "mean_tfidf": 0.013696,
+      "doc_frequency": 229,
+      "category": "noise"
+    },
+    {
+      "term": "kancelář",
+      "mean_tfidf": 0.013544,
+      "doc_frequency": 272,
+      "category": "noise"
+    },
+    {
+      "term": "jazyk",
+      "mean_tfidf": 0.013423,
+      "doc_frequency": 306,
+      "category": "noise"
+    },
+    {
+      "term": "stabilní",
+      "mean_tfidf": 0.013344,
+      "doc_frequency": 404,
+      "category": "noise"
+    },
+    {
+      "term": "dovolená",
+      "mean_tfidf": 0.013259,
+      "doc_frequency": 495,
+      "category": "noise"
+    },
+    {
+      "term": "praxe",
+      "mean_tfidf": 0.012896,
+      "doc_frequency": 356,
+      "category": "hard"
+    },
+    {
+      "term": "zpracovat",
+      "mean_tfidf": 0.012867,
+      "doc_frequency": 284,
+      "category": "noise"
+    },
+    {
+      "term": "interní",
+      "mean_tfidf": 0.012817,
+      "doc_frequency": 318,
+      "category": "noise"
+    },
+    {
+      "term": "chtít",
+      "mean_tfidf": 0.012763,
+      "doc_frequency": 300,
+      "category": "noise"
+    },
+    {
+      "term": "administrativa",
+      "mean_tfidf": 0.012608,
+      "doc_frequency": 274,
+      "category": "noise"
+    },
+    {
+      "term": "osobní",
+      "mean_tfidf": 0.012542,
+      "doc_frequency": 281,
+      "category": "noise"
+    },
+    {
+      "term": "hr",
+      "mean_tfidf": 0.012528,
+      "doc_frequency": 85,
+      "category": "noise"
+    },
+    {
+      "term": "český",
+      "mean_tfidf": 0.012523,
+      "doc_frequency": 325,
+      "category": "noise"
+    }
+  ]
+}

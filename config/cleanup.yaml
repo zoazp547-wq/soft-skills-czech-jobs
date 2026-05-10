@@ -1,0 +1,80 @@
+# =============================================================================
+# Cleanup Module Configuration
+# =============================================================================
+
+input:
+  # CONFIGURABLE: Path to the input CSV file (relative to project root output dir)
+  input_file: "jobs_cz_administrativa.json"
+
+output:
+  # CONFIGURABLE: Path to the cleaned output CSV file (relative to project root output dir)
+  output_file: "jobs_cz_administrativa_clean.json"
+
+  # CONFIGURABLE: Columns to include in the cleaned output
+  # (description_html is dropped by default for size reduction)
+  columns:
+    - "id"
+    - "title"
+    - "provider"
+    - "location"
+    - "url"
+    - "description_text"
+    - "category"
+
+filtering:
+  # CONFIGURABLE: Minimum description length in characters; rows below this are removed
+  min_description_length: 50
+
+  # CONFIGURABLE: Remove rows where any of these critical fields are empty
+  required_fields:
+    - "id"
+    - "title"
+    - "url"
+
+deduplication:
+  # CONFIGURABLE: Primary dedup key (exact match)
+  primary_key: "id"
+
+  # CONFIGURABLE: Secondary dedup keys (removes rows where ALL listed fields match)
+  secondary_keys:
+    - "title"
+    - "provider"
+
+text_cleanup:
+  # CONFIGURABLE: Replace non-breaking spaces (\xa0) with regular spaces
+  fix_nbsp: true
+
+  # CONFIGURABLE: Collapse multiple whitespace characters into a single space
+  collapse_whitespace: true
+
+  # CONFIGURABLE: Decode leftover HTML entities (&amp;, &quot;, etc.)
+  decode_html_entities: true
+
+  # CONFIGURABLE: Insert newline separators between logical sections in description
+  add_section_separators: true
+
+privacy:
+  # CONFIGURABLE: Redact phone numbers from description text
+  redact_phone_numbers: true
+
+  # CONFIGURABLE: Redact email addresses from description text
+  redact_emails: true
+
+  # CONFIGURABLE: Redact other personal identifiers (names following "Kontakt:", etc.)
+  redact_contact_names: true
+
+  # CONFIGURABLE: Replacement string for redacted content
+  redaction_placeholder: "[REDACTED]"
+
+normalization:
+  # CONFIGURABLE: Trim leading/trailing whitespace from all fields
+  trim_whitespace: true
+
+  # CONFIGURABLE: Normalize provider legal suffixes (s.r.o., a.s., etc.)
+  normalize_provider_suffixes: true
+
+  # CONFIGURABLE: Normalize location to city/district only
+  normalize_location: true
+
+  # CONFIGURABLE: Validate that URLs start with https://
+  validate_urls: true

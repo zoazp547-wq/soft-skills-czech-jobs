@@ -1,0 +1,59 @@
+# =============================================================================
+# NLP Module Configuration
+# =============================================================================
+
+input:
+  # CONFIGURABLE: Path to the input CSV file (relative to project root output dir)
+  # Should point to the cleaned output from the cleanup module
+  input_file: "jobs_cz_administrativa_clean.json"
+
+output:
+  # CONFIGURABLE: Path to the NLP-processed output CSV file (relative to project root output dir)
+  output_file: "jobs_cz_administrativa_nlp.json"
+
+processing:
+  # CONFIGURABLE: Text fields to run through the NLP pipeline
+  # Each field gets a corresponding _tokens column in the output
+  # e.g. "description_text" -> "description_tokens", "title" -> "title_tokens"
+  fields:
+    - "description_text"
+    - "title"
+
+  # CONFIGURABLE: Languages for lemmatization (simplemma language codes)
+  # Tokens are lemmatized against each language in order; first match wins
+  lemma_languages:
+    - "cs"
+    - "en"
+
+stopwords:
+  # CONFIGURABLE: Remove Czech stop words
+  czech: true
+
+  # CONFIGURABLE: Remove English stop words
+  english: true
+
+  # CONFIGURABLE: Additional custom stop words to remove (domain-specific)
+  custom:
+    - "pracovní"
+    - "nabídka"
+    - "pozice"
+    - "práce"
+    - "firma"
+    - "společnost"
+    - "zaměstnanec"
+    - "nabízíme"
+    - "požadujeme"
+    - "hledáme"
+
+tokenization:
+  # CONFIGURABLE: Minimum token length to keep (shorter tokens are discarded)
+  min_token_length: 2
+
+  # CONFIGURABLE: Remove numeric-only tokens
+  remove_numbers: true
+
+  # CONFIGURABLE: Remove punctuation-only tokens
+  remove_punctuation: true
+
+  # CONFIGURABLE: Token separator in the output column
+  output_separator: " "

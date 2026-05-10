@@ -1,0 +1,512 @@
+{
+  "total_competencies": 18,
+  "groups": {
+    "Osobnostní": {
+      "count": 4,
+      "competency_keys": [
+        "celozivotni_vzdelavani",
+        "flexibilita",
+        "kreativita",
+        "zvladani_stresu"
+      ]
+    },
+    "Interpersonální": {
+      "count": 6,
+      "competency_keys": [
+        "efektivni_komunikace",
+        "kooperace",
+        "orientace_na_zakaznika",
+        "ovlivnovani_a_rozvijeni",
+        "sebepoznani_a_porozumeni",
+        "vedeni_lidi"
+      ]
+    },
+    "Kognitivní": {
+      "count": 3,
+      "competency_keys": [
+        "analyticke_mysleni",
+        "koncepcni_mysleni",
+        "objevovani_a_orientace_v_informacich"
+      ]
+    },
+    "Výkonové": {
+      "count": 5,
+      "competency_keys": [
+        "aktivni_pristup",
+        "planovani_a_organizovani",
+        "podnikavost",
+        "reseni_problemu",
+        "samostatnost"
+      ]
+    }
+  },
+  "competencies": {
+    "celozivotni_vzdelavani": {
+      "label": "Celoživotní vzdělávání",
+      "group": "Osobnostní",
+      "token_keyword_count": 4,
+      "phrase_pattern_count": 10,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "učení",
+        "kurz",
+        "mentoring",
+        "školení"
+      ],
+      "phrase_patterns": [
+        "ochota se vzdělávat",
+        "chuť učit se",
+        "zájem o vzdělávání",
+        "profesní rozvoj",
+        "osobní rozvoj",
+        "průběžné vzdělávání",
+        "další vzdělávání",
+        "ochota učit se",
+        "chuť se rozvíjet",
+        "sebevzdělávání"
+      ],
+      "exclusion_phrases": []
+    },
+    "flexibilita": {
+      "label": "Flexibilita",
+      "group": "Osobnostní",
+      "token_keyword_count": 5,
+      "phrase_pattern_count": 5,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "flexibilita",
+        "flexibilní",
+        "adaptabilita",
+        "přizpůsobit",
+        "přizpůsobivost"
+      ],
+      "phrase_patterns": [
+        "schopnost přizpůsobit se",
+        "přizpůsobivost",
+        "práce v měnícím se prostředí",
+        "dynamické prostředí",
+        "rychle se adaptovat"
+      ],
+      "exclusion_phrases": []
+    },
+    "kreativita": {
+      "label": "Kreativita",
+      "group": "Osobnostní",
+      "token_keyword_count": 4,
+      "phrase_pattern_count": 5,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "kreativita",
+        "kreativní",
+        "inovativní",
+        "tvořivost"
+      ],
+      "phrase_patterns": [
+        "kreativní myšlení",
+        "kreativní přístup",
+        "nové nápady",
+        "tvůrčí přístup",
+        "inovativní řešení"
+      ],
+      "exclusion_phrases": []
+    },
+    "zvladani_stresu": {
+      "label": "Zvládání stresu a zátěže",
+      "group": "Osobnostní",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 8,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "stres",
+        "resilience",
+        "zátěž"
+      ],
+      "phrase_patterns": [
+        "odolnost vůči stresu",
+        "práce pod tlakem",
+        "zvládat stres",
+        "stresové situace",
+        "zátěžové situace",
+        "stresová odolnost",
+        "pracovat pod tlakem",
+        "zvládání zátěže"
+      ],
+      "exclusion_phrases": []
+    },
+    "efektivni_komunikace": {
+      "label": "Efektivní komunikace",
+      "group": "Interpersonální",
+      "token_keyword_count": 5,
+      "phrase_pattern_count": 9,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "komunikace",
+        "komunikační",
+        "komunikativní",
+        "prezentační",
+        "vyjednávat"
+      ],
+      "phrase_patterns": [
+        "komunikační dovednosti",
+        "komunikační schopnosti",
+        "prezentační dovednosti",
+        "vyjednávací schopnosti",
+        "výborné komunikační",
+        "schopnost komunikovat",
+        "jednání s lidmi",
+        "schopnost vyjednávat",
+        "komunikativní dovednosti"
+      ],
+      "exclusion_phrases": []
+    },
+    "kooperace": {
+      "label": "Kooperace",
+      "group": "Interpersonální",
+      "token_keyword_count": 4,
+      "phrase_pattern_count": 7,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "spolupráce",
+        "týmový",
+        "kooperace",
+        "teamwork"
+      ],
+      "phrase_patterns": [
+        "týmová práce",
+        "práce v týmu",
+        "spolupráce v týmu",
+        "schopnost pracovat v týmu",
+        "týmový hráč",
+        "týmová spolupráce",
+        "schopnost týmové spolupráce"
+      ],
+      "exclusion_phrases": []
+    },
+    "orientace_na_zakaznika": {
+      "label": "Orientace na zákazníka",
+      "group": "Interpersonální",
+      "token_keyword_count": 4,
+      "phrase_pattern_count": 20,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "zákazník",
+        "klient",
+        "zákaznický",
+        "klientský"
+      ],
+      "phrase_patterns": [
+        "orientace na zákazníka",
+        "orientace na klienta",
+        "péče o zákazníky",
+        "péče o klienty",
+        "zákaznický servis",
+        "klientský servis",
+        "zákaznická orientace",
+        "prozákaznický přístup",
+        "proklientský přístup",
+        "spokojenost zákazníků",
+        "spokojenost klientů",
+        "zákaznické potřeby",
+        "komunikace se zákazníky",
+        "komunikace s klienty",
+        "kontakt se zákazníky",
+        "kontakt s klienty",
+        "jednání se zákazníky",
+        "jednání s klienty",
+        "podpora zákazníků",
+        "podpora klientů"
+      ],
+      "exclusion_phrases": []
+    },
+    "ovlivnovani_a_rozvijeni": {
+      "label": "Ovlivňování a rozvíjení ostatních",
+      "group": "Interpersonální",
+      "token_keyword_count": 7,
+      "phrase_pattern_count": 8,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "ovlivňovat",
+        "motivovat",
+        "inspirovat",
+        "koučovat",
+        "rozvíjet",
+        "mentor",
+        "mentoring"
+      ],
+      "phrase_patterns": [
+        "motivace týmu",
+        "rozvoj týmu",
+        "koučování",
+        "mentoring",
+        "rozvoj zaměstnanců",
+        "schopnost motivovat",
+        "schopnost inspirovat",
+        "předávání zkušeností"
+      ],
+      "exclusion_phrases": []
+    },
+    "sebepoznani_a_porozumeni": {
+      "label": "Sebepoznání a porozumění druhým",
+      "group": "Interpersonální",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 8,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "empatie",
+        "porozumění",
+        "naslouchat"
+      ],
+      "phrase_patterns": [
+        "empatie",
+        "smysl pro empatii",
+        "schopnost naslouchat",
+        "aktivní naslouchání",
+        "porozumění druhým",
+        "citlivý přístup",
+        "lidský přístup",
+        "porozumění potřebám"
+      ],
+      "exclusion_phrases": []
+    },
+    "vedeni_lidi": {
+      "label": "Vedení lidí",
+      "group": "Interpersonální",
+      "token_keyword_count": 2,
+      "phrase_pattern_count": 8,
+      "exclusion_phrase_count": 7,
+      "min_indicators": 1,
+      "token_keywords": [
+        "leadership",
+        "manažerský"
+      ],
+      "phrase_patterns": [
+        "vedení týmu",
+        "vedení lidí",
+        "řízení týmu",
+        "manažerské schopnosti",
+        "leadership",
+        "vedení kolektivu",
+        "zkušenost s vedením",
+        "řízení lidí"
+      ],
+      "exclusion_phrases": [
+        "vedení účetnictví",
+        "vedení evidence",
+        "vedení skladu",
+        "vedení agendy",
+        "vedení dokumentace",
+        "řízení vozidla",
+        "řízení auta"
+      ]
+    },
+    "analyticke_mysleni": {
+      "label": "Analytické myšlení",
+      "group": "Kognitivní",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 7,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "analytický",
+        "analýza",
+        "logický"
+      ],
+      "phrase_patterns": [
+        "analytické myšlení",
+        "analytické schopnosti",
+        "logické myšlení",
+        "schopnost analyzovat",
+        "analytický přístup",
+        "práce s daty",
+        "datová analýza"
+      ],
+      "exclusion_phrases": []
+    },
+    "koncepcni_mysleni": {
+      "label": "Koncepční myšlení",
+      "group": "Kognitivní",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 6,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "koncepční",
+        "strategický",
+        "vize"
+      ],
+      "phrase_patterns": [
+        "koncepční myšlení",
+        "strategické myšlení",
+        "strategické plánování",
+        "strategický přístup",
+        "vizionářský",
+        "dlouhodobá strategie"
+      ],
+      "exclusion_phrases": []
+    },
+    "objevovani_a_orientace_v_informacich": {
+      "label": "Objevování a orientace v informacích",
+      "group": "Kognitivní",
+      "token_keyword_count": 2,
+      "phrase_pattern_count": 7,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "vyhledávat",
+        "rešerše"
+      ],
+      "phrase_patterns": [
+        "orientace v informacích",
+        "vyhledávání informací",
+        "práce s informacemi",
+        "schopnost vyhledávat",
+        "rešeršní činnost",
+        "orientace v dokumentech",
+        "orientace v legislativě"
+      ],
+      "exclusion_phrases": []
+    },
+    "aktivni_pristup": {
+      "label": "Aktivní přístup",
+      "group": "Výkonové",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 6,
+      "exclusion_phrase_count": 1,
+      "min_indicators": 1,
+      "token_keywords": [
+        "proaktivní",
+        "iniciativa",
+        "entuziasmus"
+      ],
+      "phrase_patterns": [
+        "proaktivní přístup",
+        "aktivní přístup",
+        "vlastní iniciativa",
+        "proaktivní jednání",
+        "aktivní zapojení",
+        "chuť do práce"
+      ],
+      "exclusion_phrases": [
+        "aktivní řidičský"
+      ]
+    },
+    "planovani_a_organizovani": {
+      "label": "Plánování a organizování práce",
+      "group": "Výkonové",
+      "token_keyword_count": 4,
+      "phrase_pattern_count": 8,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "plánování",
+        "organizační",
+        "koordinace",
+        "priorita"
+      ],
+      "phrase_patterns": [
+        "plánování a organizování",
+        "organizační schopnosti",
+        "stanovení priorit",
+        "plánování práce",
+        "organizace práce",
+        "time management",
+        "řízení času",
+        "schopnost organizovat"
+      ],
+      "exclusion_phrases": []
+    },
+    "podnikavost": {
+      "label": "Podnikavost",
+      "group": "Výkonové",
+      "token_keyword_count": 1,
+      "phrase_pattern_count": 5,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "podnikavost"
+      ],
+      "phrase_patterns": [
+        "podnikavost",
+        "podnikavý přístup",
+        "podnikatelské myšlení",
+        "obchodní myšlení",
+        "obchodní přístup"
+      ],
+      "exclusion_phrases": []
+    },
+    "reseni_problemu": {
+      "label": "Řešení problémů",
+      "group": "Výkonové",
+      "token_keyword_count": 1,
+      "phrase_pattern_count": 15,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "problém"
+      ],
+      "phrase_patterns": [
+        "řešení problémů",
+        "schopnost řešit problémy",
+        "problem solving",
+        "řešení složitých situací",
+        "hledání řešení",
+        "řešení reklamací",
+        "řešení incidentů",
+        "řešení operativních situací",
+        "řešení technických dotazů",
+        "řešení nesrovnalostí",
+        "řešení kapacitních",
+        "řešení eskalovaných",
+        "řešit nestandardní situace",
+        "řešit změny a priority",
+        "řešit reklamace"
+      ],
+      "exclusion_phrases": []
+    },
+    "samostatnost": {
+      "label": "Samostatnost",
+      "group": "Výkonové",
+      "token_keyword_count": 3,
+      "phrase_pattern_count": 5,
+      "exclusion_phrase_count": 0,
+      "min_indicators": 1,
+      "token_keywords": [
+        "samostatnost",
+        "samostatný",
+        "nezávislost"
+      ],
+      "phrase_patterns": [
+        "samostatná práce",
+        "schopnost pracovat samostatně",
+        "samostatný přístup",
+        "práce bez dohledu",
+        "samostatné rozhodování"
+      ],
+      "exclusion_phrases": []
+    }
+  },
+  "grand_totals": {
+    "total_token_keywords": 61,
+    "total_phrase_patterns": 147,
+    "total_exclusion_phrases": 8,
+    "total_indicators": 208
+  },
+  "detection_settings": {
+    "primary_mode": "target_sections_only",
+    "target_section_labels": [
+      "requirements",
+      "responsibilities",
+      "other"
+    ],
+    "significance_alpha": 0.05
+  }
+}

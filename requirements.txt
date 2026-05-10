@@ -1,0 +1,17 @@
+# Core scraping framework
+scrapy
+
+# YAML configuration file parsing
+pyyaml
+
+# HTML text extraction utilities (used internally by Scrapy)
+w3lib
+
+# Lightweight multilingual lemmatizer (NLP module)
+simplemma
+
+# TF-IDF vectorization and analysis (TF-IDF module)
+scikit-learn
+
+# Visualization (TF-IDF module)
+matplotlib

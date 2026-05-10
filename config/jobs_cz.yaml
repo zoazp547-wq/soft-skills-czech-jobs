@@ -1,0 +1,73 @@
+# =============================================================================
+# Jobs.cz Scraper Configuration
+# =============================================================================
+
+scraper:
+  # CONFIGURABLE: Base URL of the jobs.cz website
+  base_url: "https://www.jobs.cz"
+
+  # CONFIGURABLE: Category slug to scrape (appears in URL as /prace/{category_slug}/)
+  # Common slugs: administrativa, informacni-technologie, finance, marketing,
+  #               obchod, vyrobni-a-prumyslove-profese, logistika, zdravotnictvi
+  category_slug: "administrativa"
+
+  # CONFIGURABLE: Human-readable category name written into CSV output
+  category_name: "Administrativa"
+
+  # CONFIGURABLE: Maximum number of job items to scrape (set to 0 for unlimited)
+  max_items: 1500
+
+  # CONFIGURABLE: Output CSV file path (relative to project root output dir)
+  output_file: "jobs_cz_administrativa.json"
+
+network:
+  # CONFIGURABLE: Delay between requests in seconds (be polite to the server)
+  request_delay: 1.5
+
+  # CONFIGURABLE: Maximum concurrent requests to the server
+  concurrent_requests: 4
+
+  # CONFIGURABLE: User-Agent string sent with every request
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+  # CONFIGURABLE: Request timeout in seconds
+  timeout: 30
+
+  # CONFIGURABLE: Number of retry attempts for failed requests
+  retry_times: 3
+
+  # CONFIGURABLE: Whether to obey robots.txt rules
+  obey_robotstxt: true
+
+selectors:
+  listing:
+    # CSS selector for job card container on the listing page
+    card: "article.SearchResultCard"
+
+    # CSS selector for the job title link (relative to card)
+    title_link: "a.SearchResultCard__titleLink"
+
+    # HTML attribute holding the unique job ID
+    job_id_attr: "data-jobad-id"
+
+    # CSS selector for company name (relative to card)
+    company: ".SearchResultCard__footerItem span[translate='no']"
+
+    # CSS selector for location (relative to card)
+    location: "li[data-test='serp-locality']"
+
+    # CSS selector for the "next page" pagination link
+    next_page: "a.Pagination__button--next"
+
+  detail:
+    # CSS selector for the full job description container
+    description: "div[data-jobad='body'][data-test='jd-body-richtext']"
+
+    # CSS selector for job title on detail page
+    title: "h1.typography-heading-medium-text"
+
+    # CSS selector for salary info on detail page
+    salary: "div[data-test='jd-salary'] p"
+
+    # CSS selector for location on detail page
+    location: "a[data-test='jd-info-location']"

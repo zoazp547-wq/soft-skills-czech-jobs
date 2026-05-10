@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+title: >-
+  Soft Skills v českých administrativních inzerátech — NLP analýza
+  (doprovodný kód k bakalářské práci)
+message: >-
+  Pokud na tuto práci odkazujete, použijte prosím tuto citaci.
+type: software
+authors:
+  - given-names: Sofiia
+    family-names: Bobanych
+    affiliation: >-
+      Vysoká škola ekonomická v Praze, Fakulta podnikohospodářská
+repository-code: >-
+  https://github.com/<your-username>/soft-skills-czech-jobs
+abstract: >-
+  Doprovodné repository k bakalářské práci „Aktuální požadavky na měkké
+  dovednosti u administrativních pozic v ČR: Analýza pracovních inzerátů
+  metodami NLP". Repozitář obsahuje Python pipeline pro sběr, čištění,
+  NLP zpracování a hybridní rule-based detekci 18 měkkých kompetencí na
+  korpusu 1 046 inzerátů z portálu Jobs.cz.
+keywords:
+  - soft skills
+  - měkké kompetence
+  - NLP
+  - TF-IDF
+  - rule-based detection
+  - Czech labour market
+  - job advertisements
+  - scikit-learn
+license: MIT
+date-released: "2026-05-13"
+
+preferred-citation:
+  type: thesis
+  title: >-
+    Aktuální požadavky na měkké dovednosti u administrativních pozic v ČR:
+    Analýza pracovních inzerátů metodami NLP
+  authors:
+    - given-names: Sofiia
+      family-names: Bobanych
+  year: 2026
+  thesis-type: "Bakalářská práce"
+  institution:
+    name: Vysoká škola ekonomická v Praze, Fakulta podnikohospodářská
+  city: Praha
+  country: CZ

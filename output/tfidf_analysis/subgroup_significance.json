@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "subgroup_a": {
+      "key": "praha",
+      "label": "Praha",
+      "n": 467
+    },
+    "subgroup_b": {
+      "key": "regiony",
+      "label": "Regiony",
+      "n": 579
+    },
+    "test": "two_proportion_z_test",
+    "significance_threshold": 0.05,
+    "detection_mode": "target_sections_only"
+  },
+  "summary": {
+    "competencies_tested": 18,
+    "significant_differences": 2,
+    "not_significant": 16,
+    "exploratory_only": 0,
+    "significant_competency_keys": [
+      "efektivni_komunikace",
+      "analyticke_mysleni"
+    ],
+    "significant_competency_labels": [
+      "Efektivní komunikace",
+      "Analytické myšlení"
+    ],
+    "thesis_note": "Two-proportion z-test comparing Praha (n=467) vs Regiony (n=579) at α=0.05. 2/18 competencies show a statistically significant regional difference in prevalence."
+  },
+  "competencies": {
+    "aktivni_pristup": {
+      "label": "Aktivní přístup",
+      "group": "Výkonové",
+      "Praha": {
+        "count": 61,
+        "total": 467,
+        "prevalence_pct": 13.1
+      },
+      "Regiony": {
+        "count": 76,
+        "total": 579,
+        "prevalence_pct": 13.1
+      },
+      "delta_pct": -0.1,
+      "z_statistic": -0.0305,
+      "p_value": 0.9757,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "analyticke_mysleni": {
+      "label": "Analytické myšlení",
+      "group": "Kognitivní",
+      "Praha": {
+        "count": 52,
+        "total": 467,
+        "prevalence_pct": 11.1
+      },
+      "Regiony": {
+        "count": 90,
+        "total": 579,
+        "prevalence_pct": 15.5
+      },
+      "delta_pct": -4.4,
+      "z_statistic": -2.0696,
+      "p_value": 0.0385,
+      "test": "two_proportion_z_test",
+      "interpretation": "significant_difference"
+    },
+    "celozivotni_vzdelavani": {
+      "label": "Celoživotní vzdělávání",
+      "group": "Osobnostní",
+      "Praha": {
+        "count": 51,
+        "total": 467,
+        "prevalence_pct": 10.9
+      },
+      "Regiony": {
+        "count": 75,
+        "total": 579,
+        "prevalence_pct": 13.0
+      },
+      "delta_pct": -2.0,
+      "z_statistic": -1.004,
+      "p_value": 0.3154,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "efektivni_komunikace": {
+      "label": "Efektivní komunikace",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 298,
+        "total": 467,
+        "prevalence_pct": 63.8
+      },
+      "Regiony": {
+        "count": 403,
+        "total": 579,
+        "prevalence_pct": 69.6
+      },
+      "delta_pct": -5.8,
+      "z_statistic": -1.9804,
+      "p_value": 0.0477,
+      "test": "two_proportion_z_test",
+      "interpretation": "significant_difference"
+    },
+    "flexibilita": {
+      "label": "Flexibilita",
+      "group": "Osobnostní",
+      "Praha": {
+        "count": 97,
+        "total": 467,
+        "prevalence_pct": 20.8
+      },
+      "Regiony": {
+        "count": 119,
+        "total": 579,
+        "prevalence_pct": 20.6
+      },
+      "delta_pct": 0.2,
+      "z_statistic": 0.0867,
+      "p_value": 0.9309,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "koncepcni_mysleni": {
+      "label": "Koncepční myšlení",
+      "group": "Kognitivní",
+      "Praha": {
+        "count": 15,
+        "total": 467,
+        "prevalence_pct": 3.2
+      },
+      "Regiony": {
+        "count": 11,
+        "total": 579,
+        "prevalence_pct": 1.9
+      },
+      "delta_pct": 1.3,
+      "z_statistic": 1.3551,
+      "p_value": 0.1754,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "kooperace": {
+      "label": "Kooperace",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 195,
+        "total": 467,
+        "prevalence_pct": 41.8
+      },
+      "Regiony": {
+        "count": 233,
+        "total": 579,
+        "prevalence_pct": 40.2
+      },
+      "delta_pct": 1.5,
+      "z_statistic": 0.4951,
+      "p_value": 0.6205,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "kreativita": {
+      "label": "Kreativita",
+      "group": "Osobnostní",
+      "Praha": {
+        "count": 16,
+        "total": 467,
+        "prevalence_pct": 3.4
+      },
+      "Regiony": {
+        "count": 27,
+        "total": 579,
+        "prevalence_pct": 4.7
+      },
+      "delta_pct": -1.2,
+      "z_statistic": -1.0018,
+      "p_value": 0.3164,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "objevovani_a_orientace_v_informacich": {
+      "label": "Objevování a orientace v informacích",
+      "group": "Kognitivní",
+      "Praha": {
+        "count": 2,
+        "total": 467,
+        "prevalence_pct": 0.4
+      },
+      "Regiony": {
+        "count": 4,
+        "total": 579,
+        "prevalence_pct": 0.7
+      },
+      "delta_pct": -0.3,
+      "z_statistic": -0.559,
+      "p_value": 0.5761,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "orientace_na_zakaznika": {
+      "label": "Orientace na zákazníka",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 81,
+        "total": 467,
+        "prevalence_pct": 17.3
+      },
+      "Regiony": {
+        "count": 116,
+        "total": 579,
+        "prevalence_pct": 20.0
+      },
+      "delta_pct": -2.7,
+      "z_statistic": -1.1061,
+      "p_value": 0.2687,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "ovlivnovani_a_rozvijeni": {
+      "label": "Ovlivňování a rozvíjení ostatních",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 14,
+        "total": 467,
+        "prevalence_pct": 3.0
+      },
+      "Regiony": {
+        "count": 19,
+        "total": 579,
+        "prevalence_pct": 3.3
+      },
+      "delta_pct": -0.3,
+      "z_statistic": -0.2609,
+      "p_value": 0.7942,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "planovani_a_organizovani": {
+      "label": "Plánování a organizování práce",
+      "group": "Výkonové",
+      "Praha": {
+        "count": 159,
+        "total": 467,
+        "prevalence_pct": 34.0
+      },
+      "Regiony": {
+        "count": 202,
+        "total": 579,
+        "prevalence_pct": 34.9
+      },
+      "delta_pct": -0.8,
+      "z_statistic": -0.2843,
+      "p_value": 0.7762,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "podnikavost": {
+      "label": "Podnikavost",
+      "group": "Výkonové",
+      "Praha": {
+        "count": 3,
+        "total": 467,
+        "prevalence_pct": 0.6
+      },
+      "Regiony": {
+        "count": 8,
+        "total": 579,
+        "prevalence_pct": 1.4
+      },
+      "delta_pct": -0.7,
+      "z_statistic": -1.1652,
+      "p_value": 0.2439,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "reseni_problemu": {
+      "label": "Řešení problémů",
+      "group": "Výkonové",
+      "Praha": {
+        "count": 37,
+        "total": 467,
+        "prevalence_pct": 7.9
+      },
+      "Regiony": {
+        "count": 58,
+        "total": 579,
+        "prevalence_pct": 10.0
+      },
+      "delta_pct": -2.1,
+      "z_statistic": -1.1718,
+      "p_value": 0.2413,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "samostatnost": {
+      "label": "Samostatnost",
+      "group": "Výkonové",
+      "Praha": {
+        "count": 159,
+        "total": 467,
+        "prevalence_pct": 34.0
+      },
+      "Regiony": {
+        "count": 205,
+        "total": 579,
+        "prevalence_pct": 35.4
+      },
+      "delta_pct": -1.4,
+      "z_statistic": -0.4586,
+      "p_value": 0.6465,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "sebepoznani_a_porozumeni": {
+      "label": "Sebepoznání a porozumění druhým",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 17,
+        "total": 467,
+        "prevalence_pct": 3.6
+      },
+      "Regiony": {
+        "count": 13,
+        "total": 579,
+        "prevalence_pct": 2.2
+      },
+      "delta_pct": 1.4,
+      "z_statistic": 1.3438,
+      "p_value": 0.179,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "vedeni_lidi": {
+      "label": "Vedení lidí",
+      "group": "Interpersonální",
+      "Praha": {
+        "count": 19,
+        "total": 467,
+        "prevalence_pct": 4.1
+      },
+      "Regiony": {
+        "count": 23,
+        "total": 579,
+        "prevalence_pct": 4.0
+      },
+      "delta_pct": 0.1,
+      "z_statistic": 0.0787,
+      "p_value": 0.9372,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    },
+    "zvladani_stresu": {
+      "label": "Zvládání stresu a zátěže",
+      "group": "Osobnostní",
+      "Praha": {
+        "count": 20,
+        "total": 467,
+        "prevalence_pct": 4.3
+      },
+      "Regiony": {
+        "count": 28,
+        "total": 579,
+        "prevalence_pct": 4.8
+      },
+      "delta_pct": -0.6,
+      "z_statistic": -0.4251,
+      "p_value": 0.6707,
+      "test": "two_proportion_z_test",
+      "interpretation": "no_statistically_significant_difference"
+    }
+  }
+}

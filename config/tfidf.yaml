@@ -1,0 +1,584 @@
+# =============================================================================
+# TF-IDF Analysis Module Configuration
+# =============================================================================
+
+input:
+  # CONFIGURABLE: Path to the NLP-processed JSON file (relative to project root output dir)
+  input_file: "jobs_cz_administrativa_nlp.json"
+
+  # CONFIGURABLE: Field containing the tokenized text to analyze
+  token_field: "description_tokens"
+
+  # CONFIGURABLE: Field containing the cleaned (non-tokenized) text for phrase matching
+  text_field: "description_text"
+
+output:
+  # CONFIGURABLE: Directory for analysis outputs (relative to project root output dir)
+  output_dir: "tfidf_analysis"
+
+  # CONFIGURABLE: Top-N terms JSON report filename
+  report_file: "top_terms_report.json"
+
+  # CONFIGURABLE: Competency analysis JSON report filename
+  competency_report_file: "competency_report.json"
+
+  # CONFIGURABLE: Bar chart PNG filename (top terms)
+  chart_file: "top_terms_tfidf.png"
+
+  # CONFIGURABLE: Bar chart PNG filename (competency prevalence)
+  competency_chart_file: "competency_prevalence.png"
+
+  # CONFIGURABLE: Interactive HTML dashboard filename
+  interactive_file: "competency_dashboard.html"
+
+  # CONFIGURABLE: Subgroup comparison JSON report filename
+  subgroup_report_file: "subgroup_comparison.json"
+
+  # CONFIGURABLE: Subgroup comparison chart PNG filename
+  subgroup_chart_file: "subgroup_top_terms.png"
+
+  # CONFIGURABLE: Framework summary JSON (built from config, for thesis consistency)
+  framework_summary_file: "framework_summary.json"
+
+  # CONFIGURABLE: Subgroup statistical significance JSON
+  subgroup_significance_file: "subgroup_significance.json"
+
+tfidf:
+  # CONFIGURABLE: Maximum number of features (vocabulary size); 0 = unlimited
+  max_features: 0
+
+  # CONFIGURABLE: Minimum document frequency (absolute count)
+  min_df: 3
+
+  # CONFIGURABLE: Maximum document frequency (fraction)
+  max_df: 0.90
+
+  # CONFIGURABLE: N-gram range (1,2) = unigrams + bigrams
+  ngram_min: 1
+  ngram_max: 2
+
+  # CONFIGURABLE: Number of top terms to extract
+  top_n: 50
+
+# ---------------------------------------------------------------------------
+# Skill classification dictionaries (for TF-IDF top-N colouring)
+# ---------------------------------------------------------------------------
+
+classification:
+  # Fallback — primary source is competencies.token_keywords (auto-generated).
+  # These are additional soft-skill terms not covered by any competency definition.
+  soft_skills:
+    - "odpovědnost"
+    - "zodpovědný"
+    - "pečlivost"
+    - "pečlivý"
+    - "spolehlivost"
+    - "důslednost"
+    - "dovednost"
+    - "schopnost"
+
+  hard_skills:
+    - "excel"
+    - "word"
+    - "office"
+    - "sap"
+    - "python"
+    - "sql"
+    - "erp"
+    - "účetní"
+    - "mzdový"
+    - "faktura"
+    - "daňový"
+    - "legislativa"
+    - "audit"
+    - "controlling"
+    - "reporting"
+    - "certifikát"
+    - "iso"
+    - "gdpr"
+    - "outlook"
+    - "powerpoint"
+    - "ekonomický"
+    - "finanční"
+    - "obchodní"
+    - "logistický"
+    - "právní"
+    - "smlouva"
+    - "pojištění"
+    - "praxe"
+    - "zkušenost"
+
+# =============================================================================
+# Competency Framework — Hybrid Detection (token keywords + phrase patterns)
+# =============================================================================
+# Each competency has:
+#   token_keywords — matched against lemmatized tokens (from description_tokens)
+#   phrase_patterns — matched as substrings against cleaned text (description_text, lowercased)
+# A competency is "detected" if ANY keyword or phrase matches.
+# The output reports which indicators fired and how many.
+
+competencies:
+  # --- OSOBNOSTNÍ KOMPETENCE (Personal) ---
+
+  celozivotni_vzdelavani:
+    label: "Celoživotní vzdělávání"
+    group: "Osobnostní"
+    token_keywords:
+      - "učení"
+      - "kurz"
+      - "mentoring"
+      - "školení"
+    phrase_patterns:
+      - "ochota se vzdělávat"
+      - "chuť učit se"
+      - "zájem o vzdělávání"
+      - "profesní rozvoj"
+      - "osobní rozvoj"
+      - "průběžné vzdělávání"
+      - "další vzdělávání"
+      - "ochota učit se"
+      - "chuť se rozvíjet"
+      - "sebevzdělávání"
+
+  flexibilita:
+    label: "Flexibilita"
+    group: "Osobnostní"
+    token_keywords:
+      - "flexibilita"
+      - "flexibilní"
+      - "adaptabilita"
+      - "přizpůsobit"
+      - "přizpůsobivost"
+    phrase_patterns:
+      - "schopnost přizpůsobit se"
+      - "přizpůsobivost"
+      - "práce v měnícím se prostředí"
+      - "dynamické prostředí"
+      - "rychle se adaptovat"
+
+  kreativita:
+    label: "Kreativita"
+    group: "Osobnostní"
+    token_keywords:
+      - "kreativita"
+      - "kreativní"
+      - "inovativní"
+      - "tvořivost"
+    phrase_patterns:
+      - "kreativní myšlení"
+      - "kreativní přístup"
+      - "nové nápady"
+      - "tvůrčí přístup"
+      - "inovativní řešení"
+
+  zvladani_stresu:
+    label: "Zvládání stresu a zátěže"
+    group: "Osobnostní"
+    token_keywords:
+      - "stres"
+      - "resilience"
+      - "zátěž"
+    phrase_patterns:
+      - "odolnost vůči stresu"
+      - "práce pod tlakem"
+      - "zvládat stres"
+      - "stresové situace"
+      - "zátěžové situace"
+      - "stresová odolnost"
+      - "pracovat pod tlakem"
+      - "zvládání zátěže"
+
+  # --- INTERPERSONÁLNÍ KOMPETENCE (Interpersonal) ---
+
+  efektivni_komunikace:
+    label: "Efektivní komunikace"
+    group: "Interpersonální"
+    token_keywords:
+      - "komunikace"
+      - "komunikační"
+      - "komunikativní"
+      - "prezentační"
+      - "vyjednávat"
+    phrase_patterns:
+      - "komunikační dovednosti"
+      - "komunikační schopnosti"
+      - "prezentační dovednosti"
+      - "vyjednávací schopnosti"
+      - "výborné komunikační"
+      - "schopnost komunikovat"
+      - "jednání s lidmi"
+      - "schopnost vyjednávat"
+      - "komunikativní dovednosti"
+
+  kooperace:
+    label: "Kooperace"
+    group: "Interpersonální"
+    token_keywords:
+      - "spolupráce"
+      - "týmový"
+      - "kooperace"
+      - "teamwork"
+    phrase_patterns:
+      - "týmová práce"
+      - "práce v týmu"
+      - "spolupráce v týmu"
+      - "schopnost pracovat v týmu"
+      - "týmový hráč"
+      - "týmová spolupráce"
+      - "schopnost týmové spolupráce"
+
+  orientace_na_zakaznika:       # 2 mezery (správně - na úrovni ostatních)
+    label: "Orientace na zákazníka"
+    group: "Interpersonální"
+    token_keywords:
+      - "zákazník"
+      - "klient"
+      - "zákaznický"
+      - "klientský"
+    phrase_patterns:
+      - "orientace na zákazníka"
+      - "orientace na klienta"
+      - "péče o zákazníky"
+      - "péče o klienty"
+      - "zákaznický servis"
+      - "klientský servis"
+      - "zákaznická orientace"
+      - "prozákaznický přístup"
+      - "proklientský přístup"
+      - "spokojenost zákazníků"
+      - "spokojenost klientů"
+      - "zákaznické potřeby"
+      - "komunikace se zákazníky"
+      - "komunikace s klienty"
+      - "kontakt se zákazníky"
+      - "kontakt s klienty"
+      - "jednání se zákazníky"
+      - "jednání s klienty"
+      - "podpora zákazníků"
+      - "podpora klientů"
+
+  ovlivnovani_a_rozvijeni:
+    label: "Ovlivňování a rozvíjení ostatních"
+    group: "Interpersonální"
+    token_keywords:
+      - "ovlivňovat"
+      - "motivovat"
+      - "inspirovat"
+      - "koučovat"
+      - "rozvíjet"
+      - "mentor"
+      - "mentoring"
+    phrase_patterns:
+      - "motivace týmu"
+      - "rozvoj týmu"
+      - "koučování"
+      - "mentoring"
+      - "rozvoj zaměstnanců"
+      - "schopnost motivovat"
+      - "schopnost inspirovat"
+      - "předávání zkušeností"
+
+  sebepoznani_a_porozumeni:
+    label: "Sebepoznání a porozumění druhým"
+    group: "Interpersonální"
+    token_keywords:
+      - "empatie"
+      - "porozumění"
+      - "naslouchat"
+    phrase_patterns:
+      - "empatie"
+      - "smysl pro empatii"
+      - "schopnost naslouchat"
+      - "aktivní naslouchání"
+      - "porozumění druhým"
+      - "citlivý přístup"
+      - "lidský přístup"
+      - "porozumění potřebám"
+
+  vedeni_lidi:
+    label: "Vedení lidí"
+    group: "Interpersonální"
+    token_keywords:
+      - "leadership"
+      - "manažerský"
+    phrase_patterns:
+      - "vedení týmu"
+      - "vedení lidí"
+      - "řízení týmu"
+      - "manažerské schopnosti"
+      - "leadership"
+      - "vedení kolektivu"
+      - "zkušenost s vedením"
+      - "řízení lidí"
+    exclusion_phrases:
+      - "vedení účetnictví"
+      - "vedení evidence"
+      - "vedení skladu"
+      - "vedení agendy"
+      - "vedení dokumentace"
+      - "řízení vozidla"
+      - "řízení auta"
+
+  # --- KOGNITIVNÍ KOMPETENCE (Cognitive) ---
+
+  analyticke_mysleni:
+    label: "Analytické myšlení"
+    group: "Kognitivní"
+    token_keywords:
+      - "analytický"
+      - "analýza"
+      - "logický"
+    phrase_patterns:
+      - "analytické myšlení"
+      - "analytické schopnosti"
+      - "logické myšlení"
+      - "schopnost analyzovat"
+      - "analytický přístup"
+      - "práce s daty"
+      - "datová analýza"
+
+  koncepcni_mysleni:
+    label: "Koncepční myšlení"
+    group: "Kognitivní"
+    token_keywords:
+      - "koncepční"
+      - "strategický"
+      - "vize"
+    phrase_patterns:
+      - "koncepční myšlení"
+      - "strategické myšlení"
+      - "strategické plánování"
+      - "strategický přístup"
+      - "vizionářský"
+      - "dlouhodobá strategie"
+
+  objevovani_a_orientace_v_informacich:
+    label: "Objevování a orientace v informacích"
+    group: "Kognitivní"
+    token_keywords:
+      - "vyhledávat"
+      - "rešerše"
+    phrase_patterns:
+      - "orientace v informacích"
+      - "vyhledávání informací"
+      - "práce s informacemi"
+      - "schopnost vyhledávat"
+      - "rešeršní činnost"
+      - "orientace v dokumentech"
+      - "orientace v legislativě"
+
+  # --- VÝKONOVÉ KOMPETENCE (Performance) ---
+
+  aktivni_pristup:
+    label: "Aktivní přístup"
+    group: "Výkonové"
+    token_keywords:
+      - "proaktivní"
+      - "iniciativa"
+      - "entuziasmus"
+    phrase_patterns:
+      - "proaktivní přístup"
+      - "aktivní přístup"
+      - "vlastní iniciativa"
+      - "proaktivní jednání"
+      - "aktivní zapojení"
+      - "chuť do práce"
+    exclusion_phrases:
+      - "aktivní řidičský"
+
+  planovani_a_organizovani:
+    label: "Plánování a organizování práce"
+    group: "Výkonové"
+    token_keywords:
+      - "plánování"
+      - "organizační"
+      - "koordinace"
+      - "priorita"
+    phrase_patterns:
+      - "plánování a organizování"
+      - "organizační schopnosti"
+      - "stanovení priorit"
+      - "plánování práce"
+      - "organizace práce"
+      - "time management"
+      - "řízení času"
+      - "schopnost organizovat"
+
+  podnikavost:
+    label: "Podnikavost"
+    group: "Výkonové"
+    token_keywords:
+      - "podnikavost"
+    phrase_patterns:
+      - "podnikavost"
+      - "podnikavý přístup"
+      - "podnikatelské myšlení"
+      - "obchodní myšlení"
+      - "obchodní přístup"
+
+  reseni_problemu:
+    label: "Řešení problémů"
+    group: "Výkonové"
+    token_keywords:
+      - "problém"
+    phrase_patterns:
+      - "řešení problémů"
+      - "schopnost řešit problémy"
+      - "problem solving"
+      - "řešení složitých situací"
+      - "hledání řešení"
+      - "řešení reklamací"
+      - "řešení incidentů"
+      - "řešení operativních situací"
+      - "řešení technických dotazů"
+      - "řešení nesrovnalostí"
+      - "řešení kapacitních"
+      - "řešení eskalovaných"
+      - "řešit nestandardní situace"
+      - "řešit změny a priority"
+      - "řešit reklamace"
+
+  samostatnost:
+    label: "Samostatnost"
+    group: "Výkonové"
+    token_keywords:
+      - "samostatnost"
+      - "samostatný"
+      - "nezávislost"
+    phrase_patterns:
+      - "samostatná práce"
+      - "schopnost pracovat samostatně"
+      - "samostatný přístup"
+      - "práce bez dohledu"
+      - "samostatné rozhodování"
+
+visualization:
+  # CONFIGURABLE: Chart figure size (width, height) in inches
+  figure_width: 14
+  figure_height: 8
+
+  # CONFIGURABLE: Color for soft skills bars
+  color_soft: "#4CAF50"
+
+  # CONFIGURABLE: Color for hard skills bars
+  color_hard: "#2196F3"
+
+  # CONFIGURABLE: Color for noise bars
+  color_noise: "#9E9E9E"
+
+  # CONFIGURABLE: Chart title (top terms)
+  title: "Top 50 Terms by Mean TF-IDF Score (uni+bigrams)"
+
+  # CONFIGURABLE: Chart title (competency prevalence)
+  competency_title: "Competency Prevalence in Job Listings"
+
+  # CONFIGURABLE: Competency group colours
+  color_osobnostni: "#FF9800"
+  color_interpersonalni: "#4CAF50"
+  color_kognitivni: "#2196F3"
+  color_vykonove: "#9C27B0"
+
+  # CONFIGURABLE: DPI for saved PNG
+  dpi: 150
+
+# =============================================================================
+# Subgroup Analysis (e.g., Praha vs. Regiony)
+# =============================================================================
+
+subgroups:
+  # CONFIGURABLE: Enable/disable subgroup analysis
+  enabled: true
+
+  # CONFIGURABLE: Field from the data rows used for splitting
+  field: "location"
+
+  # CONFIGURABLE: Match rule — "contains" checks if field value contains match string
+  split_rule: "contains"
+
+  groups:
+    praha:
+      label: "Praha"
+      # CONFIGURABLE: Any row whose location contains "Praha"
+      match: "Praha"
+    regiony:
+      label: "Regiony"
+      # CONFIGURABLE: __default__ captures everything not matched above
+      match: "__default__"
+
+# =============================================================================
+# Section-aware parsing — header_patterns keyed by section label
+# Used by modules/tfidf/sections.py (split_into_sections).
+# Patterns are compiled with re.IGNORECASE | re.MULTILINE,
+# so ^ matches the start of every line in the ad text.
+# Labels: requirements, responsibilities, benefits, company_pitch, other
+# (anything before the first detected header becomes label "other")
+# =============================================================================
+
+sections:
+  header_patterns:
+
+    requirements:
+      - "^\\s*po\u017eadujeme\\s*:?"
+      - "^\\s*po\u017eadavky\\s*:?"
+      - "^\\s*co\\s+od\\s+v\u00e1s\\s+o\u010dek\u00e1v\u00e1me\\s*:?"
+      - "^\\s*co\\s+hled\u00e1me\\s*:?"
+      - "^\\s*hled\u00e1me\\s+kandid\u00e1ta\\s*"
+      - "^\\s*ide\u00e1ln\u00ed\\s+kandid\u00e1t\\s*:?"
+      - "^\\s*v\u00e1\u0161\\s+profil\\s*:?"
+      - "^\\s*co\\s+pot\u0159ebujete\\s*:?"
+      - "^\\s*requirements?\\s*:?"
+      - "^\\s*what\\s+we.?re\\s+looking\\s+for\\s*:?"
+
+    responsibilities:
+      - "^\\s*n\u00e1pl\u0148\\s+pr\u00e1ce\\s*:?"
+      - "^\\s*pracovn\u00ed\\s+n\u00e1pl\u0148\\s*:?"
+      - "^\\s*co\\s+budete\\s+d\u011blat\\s*:?"
+      - "^\\s*co\\s+b\u016fde\\s+va\u0161\u00ed\\s+n\u00e1pl\u0148\u00ed\\s*:?"
+      - "^\\s*co\\s+v\u00e1s\\s+\u010dek\u00e1\\s*:?"
+      - "^\\s*va\u0161e\\s+\u00fakoly\\s*:?"
+      - "^\\s*hlavn\u00ed\\s+odpov\u011bdnosti\\s*:?"
+      - "^\\s*responsibilities?\\s*:?"
+      - "^\\s*what\\s+you.?ll\\s+do\\s*:?"
+      - "^\\s*job\\s+description\\s*:?"
+
+    benefits:
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+(?:v\u00e1m\\s+)?nab\u00edz\u00edme\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+v\u00e1m\\s+m\u016f\u017eeme\\s+nab\u00ednout\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+(?:ti\\s+)?nab\u00eddneme\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+dostanete\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+z\u00edsk\u00e1te\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?co\\s+za\\s+to\\s+dostanete\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?(?:na\u0161e\\s+)?benefity\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?nab\u00edz\u00edme\\s*:"
+      - "^\\s*(?:\U0001f381\\s*)?what\\s+we\\s+offer\\s*:?"
+      - "^\\s*(?:\U0001f381\\s*)?we\\s+offer\\s*:"
+      - "^\\s*(?:\U0001f381\\s*)?benefits?\\s*:"
+
+    company_pitch:
+      - "^\\s*o\\s+n\u00e1s\\s*:?"
+      - "^\\s*o\\s+spole\u010dnosti\\s*:?"
+      - "^\\s*kdo\\s+jsme\\s*:?"
+      - "^\\s*na\u0161e\\s+spole\u010dnost\\s*:?"
+      - "^\\s*o\\s+firm\u011b\\s*:?"
+      - "^\\s*about\\s+us\\s*:?"
+      - "^\\s*who\\s+we\\s+are\\s*:?"
+
+# =============================================================================
+# Dual-mode detection settings
+# =============================================================================
+
+detection:
+  # Primary mode used for charts, dashboard, and per-job results.
+  # Options: "all_text" | "target_sections_only"
+  primary_mode: "target_sections_only"
+
+  # Section labels whose text is searched in "target_sections_only" mode.
+  # "other" is intentionally included so ads with no detected headers
+  # (which fall back to a single "other" section) are not silently dropped.
+  target_section_labels:
+    - "requirements"
+    - "responsibilities"
+    - "other"
+
+  # Significance level for subgroup z-tests
+  significance_alpha: 0.05
